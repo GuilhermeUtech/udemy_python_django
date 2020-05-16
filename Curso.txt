@@ -1,0 +1,15 @@
+Como criar um projeto django? 
+- django-admin startproject django1 . (Se eu não por o "." ele ia criar mais um diretório, como já tinhamos o projeto teriamos um 
+diretório dentro do diretório)
+ - manage.py é o arquivo que vamos utilizar para usar comandos do framework django
+
+Como criar um app django?
+ - django-admin startapp nome_projeto
+
+Qual a diferença entre um projeto django e uma aplicação??? 
+ - A gente cria um projeto, e dentro do projeto tem pedacinhos que são aplicações plugáveis.
+ - Várias aplicações com suas tarefas específicas (que podem ser utilizadas em outro projeto)
+ - Existem várias aplicações que podemos pegar da internet e utilizar 
+ - A idéia é modularizar o projeto, ex: E-commerce, faríamos a aplicação de clientes, produtor, pagamentos, promoções etc
+ - "Um projeto Django é um conjunto de aplicações..." Instrutor, Geek.
+

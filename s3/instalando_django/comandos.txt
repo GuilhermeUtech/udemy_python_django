@@ -1,0 +1,4 @@
+*abrir um terminal*
+- pip install django
+- pip freeze > requirements.txt (bibliotecas utilizadas e versão)
+ - 

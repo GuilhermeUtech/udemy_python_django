@@ -1,0 +1,5 @@
+ - django-admin startproject django1 . (Se eu não por o "." ele ia criar mais um diretório, como já tinhamos o projeto teriamos um 
+diretório dentro do diretório)
+ - 
+
+
