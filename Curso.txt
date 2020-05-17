@@ -13,3 +13,69 @@ Qual a diferença entre um projeto django e uma aplicação???
  - A idéia é modularizar o projeto, ex: E-commerce, faríamos a aplicação de clientes, produtor, pagamentos, promoções etc
  - "Um projeto Django é um conjunto de aplicações..." Instrutor, Geek.
 
+Padrão MTV do Django: 
+ - Model, template, views.
+ - No django o view funciona como um controller
+
+Configurações do django e o arquivo settings.py
+ - adicionar em 'DIRS' o valor 'templates' diz que teremos um diretório com esse nome na qual colocaremos nossos templates lá
+ - Como startar o nosso projeto django: python manage.py runserver
+ - Alerações em python são executadas diretamente, em css html js tem que reiniciar o server (obvio)
+
+Views no Django e o arquivo views.py
+ - Uma view em django é uma função que recebe um request e retorna uma renderização do request com um template.
+ - Views são sempre criadas nas aplicações	
+
+Rotas no Djando e o arquivo urls.py
+ - Criamos as views, agora precisamos criar as rotas para as views.
+ - Aplicações não tem urls.py 
+ - cria as views, vai no url e importa as views e depois coloca no path (urlpatterns)
+ - colocamos um urls dentro da aplicação para simplificar
+
+Templates no Django
+ - Lá em settings do projeto dizemos que nosso diretório de templates terá o nome de templates.
+ - Cada aplicação terá seu próprio template. (Opcional, porém recomendável)
+
+Models no Django e o arquivo models.py
+ - O model é um modelo de dados, através das classes definidas o django mapeia essas classes em banco de dados.
+ - Exemplo de modelo:
+class Produto(models.Model):
+    nome = models.CharField('Nome', max_lenght=100)
+    prec = models.DecimalField('Preco')
+    estoque = models.IntegerField('quantidade em estoque')
+
+>python manage.py makemigrations -> comando para realizar migrations
+O que que é o migration? Maneira de gerenciar o histórico de modificações do bd em relação aos modelos de dados.
+
+ - Como executar a migration? python manage.py migrate
+ - Assim que criamos um modelo a gente usa o comando make migration (sempre): python manage.py makemigrations
+ - Por fim a gente utiliza o migrate: python manage.py migrate
+
+Área administrativa dos projetos Djanfo e o arquivo admin.py
+ - Como criar um usuário administrador: python manage.py createsuperuser
+
+C:\Users\Guilherme Utech\Desktop\udemy_python_django\s3\criando_projeto_django>python manage.py createsuperuser
+Usuário (leave blank to use 'guilhermeutech'):
+Endereço de email: utech.br@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+ - admin.py nas aplicações serve para registrar os modelos criados, Ex:
+
+	from .models import Produto, Cliente
+	class ProdutoAdmin(admin.ModelAdmin):
+    		list_display = ('nome', 'preco', 'estoque')
+
+	admin.site.register(Produto, ProdutoAdmin)
+	admin.site.register(Cliente) #essa ProdutoAdmin coloca certinho todos essas tabelas na aparição do produto na página de admin	
+
+ - como alterar o caminho minhaurl.com/admin? vai em urls.py (do projeto) e altera: 
+urlpatterns = [
+    path('painel/', admin.site.urls), -> veja que troquei admin por painel
+    path('', include('core.urls')),
+]
+
+
+
+
