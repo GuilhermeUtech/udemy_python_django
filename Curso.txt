@@ -76,6 +76,15 @@ urlpatterns = [
     path('', include('core.urls')),
 ]
 
+Usando e abusando do Django Shell
+ - python manage.py aparece todos os comandos
+ - Para ter ajuda em um comando específico: python manage.py help makemigrations
+ - python manage.py shell -> carrega um console python que da pra importar os models da aplicação e através
+do comando dir(Nome_do_modelo) a gente consegue ver todos os atributos dele.
+ - Tem uma grande quantidade de métodos que podemos utilizar para entre outras coisas, pegar informações dos usuários. Pode ver
+se é super usuário, último login, nome, email, etc. .. . . .
+
+
 
 
 

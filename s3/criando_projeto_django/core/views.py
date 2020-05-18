@@ -1,12 +1,18 @@
 from django.shortcuts import render
 
+from .models import Produto
+
 
 def index(request):
+
+    produtos = Produto.objects.all()
     context = {
         'curso':'programação web com django Framework',
         'outro':'outro qualquer coisa',
         'imagem':'https://www.petz.com.br/blog/wp-content/uploads/2017/04/comportamento-dos-gatos-1.jpg',
+        'produtos': produtos
     }
+
     """
     Tudo que eu por aqui eu posso acessar lá no index.html. Basta utilizar {{curso}} por exemplo
     """
@@ -16,3 +22,9 @@ def index(request):
 
 def contato(request):
     return render(request, 'contato.html')
+
+
+def produto(request, pk):
+    print(f'PK: {pk}')
+    return render(request, 'produto.html')
+
