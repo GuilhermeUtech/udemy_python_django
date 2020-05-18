@@ -84,7 +84,30 @@ do comando dir(Nome_do_modelo) a gente consegue ver todos os atributos dele.
  - Tem uma grande quantidade de métodos que podemos utilizar para entre outras coisas, pegar informações dos usuários. Pode ver
 se é super usuário, último login, nome, email, etc. .. . . .
 
+Arquivos estáticos no Django: CSS,JavaScript e Imagens
+ - Django usa um conceito de aplicações plugáveis, um projeto com suas aplicações.
+ - Cada aplicação tem seu diretório de template, com as páginas que a aplicação vai apresentar.
+settings.py tem a seguinte parte:
 
+	# Static files (CSS, JavaScript, Images)
+	# https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+	STATIC_URL = '/static/' # usado durante o desenvolvimento
+Cada aplicação tem que ter um diretório com esse nome (static) e que os arquivos estáticos sejam pegos desse diretório.
+ - Na aplicação, botão direito -> new directory -> static
+
+-static
+ -- css
+ -- images
+ -- js
+
+Em cima de todo html que for carregar arquivos estáticos: {% load static %}
+no head: <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> vai lá no static do settings e dai pega os estáticos
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script> -> isso leva ao nosso static/js/script.js
+
+
+Coloque nos seus favoritos o Django Docs:
+ - Colocado, lá tem vários exemplos e tutoriais.
 
 
 
