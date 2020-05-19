@@ -1,7 +1,7 @@
 """django1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.0/topics/http/urls/
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -21,10 +21,10 @@ from django.conf.urls import handler404, handler500
 from core import views
 
 urlpatterns = [
-    path('painel/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('core.urls')),
 ]
 
+
 handler404 = views.error404
 handler500 = views.error500
-

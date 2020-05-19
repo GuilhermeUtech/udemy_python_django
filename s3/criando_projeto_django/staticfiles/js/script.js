@@ -1,3 +1,3 @@
 function teste(){
-    alert("Funciona essa função")
+    alert("Funciona mesmo!");
 }

@@ -110,4 +110,18 @@ Coloque nos seus favoritos o Django Docs:
  - Colocado, lá tem vários exemplos e tutoriais.
 
 
+Publicando na internet o projeto djando: 
+ - Mudar o DEBUG para False pois está indo pra produção
+ - Como vou usar o heroku eu n vou ter meu domínio próprio bonitinho,
+
+ALLOWED_HOSTS = ["*"] 
+
+ - Caso eu tivesse eu substituiria o host aqui no ALLOWED_HOSTS: www.meudominio.com.br
+ - Depois que o heroku me der o domínio eu coloco ali no lugar da "*"
+ - pip install whitenoise gunicorn
+  - whitenoise: pra apresentar arquivos estáticos em modo produção
+  - gunicorn: gunicorn = servidor pra rodar aplicações python
+ - Adicionar a linha 'whitenoise.middleware.WhiteNoiseMiddleware', em settings -> MIDDLEWARE
+ - criar o .gitignore
+ - heroku create django1-gru --buildpack heroku/python
 
